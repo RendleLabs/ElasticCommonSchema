@@ -11,6 +11,7 @@ public class Container
     public Container? Parent { get; }
     public string Name { get; }
     public string CSharpName => Name.ToPascalCase();
+    public string QualifiedCSharpName => Parent is not null ? $"{Parent.QualifiedCSharpName}.{CSharpName}" : CSharpName;
 
     public Dictionary<string, Container> Containers { get; } = new();
 

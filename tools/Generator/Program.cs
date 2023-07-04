@@ -51,4 +51,8 @@ foreach (var c in container.All())
     Console.WriteLine(path);
 }
 
+var markdown = MarkdownGenerator.Generate(container);
+path = Path.Combine(directory, "README.md");
+File.WriteAllText(path, markdown);
+
 return 0;
